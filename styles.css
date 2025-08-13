@@ -1,3 +1,4 @@
+/* Kod asal anda untuk paparan desktop */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #F4F9F4; /* soft mint */
@@ -234,4 +235,79 @@ label[for="ingredients"] {
 #ingredients {
     border: 2px solid #1ABC9C; /* tebal + warna teal */
     padding: 8px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* KOD INI UNTUK TELEFON SAHAJA */
+/* Kod ini akan aktif untuk skrin dengan lebar 768px atau ke bawah */
+@media screen and (max-width: 768px) {
+
+    /* Navigation Menu */
+    nav {
+        flex-direction: column; /* Ubah susunan menu dari mendatar ke menegak */
+        padding: 0;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah antara link */
+    }
+
+    /* Header */
+    .header {
+        margin-top: 50px; /* Kurangkan margin atas untuk memberi lebih ruang */
+        padding: 60px 10px 20px;
+    }
+    
+    .header h1 {
+        font-size: 2em; /* Kecilkan saiz tajuk utama */
+    }
+
+    .header p {
+        font-size: 1em; /* Kecilkan saiz perenggan */
+    }
+
+    /* Header Images */
+    .header-images {
+        flex-direction: column; /* Susun gambar-gambar secara menegak */
+        align-items: center;
+    }
+
+    .header-images img {
+        height: auto; /* Biar ketinggian disesuaikan */
+        width: 80%; /* Jadikan lebar gambar 80% dari skrin */
+        transform: none !important; /* Batalkan efek "tilt" */
+    }
+
+    .header-images img.big {
+        height: auto;
+    }
+
+    /* Container */
+    .container {
+        width: 90%; /* Lebar penuh, tapi ada padding */
+        margin: 20px auto; /* Kurangkan margin antara container */
+        padding: 15px;
+    }
+
+    /* Jadual (Table) */
+    table, #resultTable {
+        font-size: 12px;
+        display: block; /* Tukar paparan jadi blok */
+        width: 100%;
+        overflow-x: auto; /* Membolehkan jadual discroll mendatar */
+    }
+
+    /* Form */
+    .button-group {
+        flex-direction: column; /* Butang akan tersusun menegak */
+    }
+
+    /* About Section Image */
+    #edcSection img {
+        width: 100%; /* Gambar ambil lebar penuh */
+        height: auto;
+    }
 }
