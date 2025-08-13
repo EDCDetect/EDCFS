@@ -1,4 +1,3 @@
-/* Kod asal anda untuk paparan desktop */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #F4F9F4; /* soft mint */
@@ -237,77 +236,77 @@ label[for="ingredients"] {
     padding: 8px;
 }
 
-/* -------------------------------------------------------------------------- */
-
-/* KOD INI UNTUK TELEFON SAHAJA */
-/* Kod ini akan aktif untuk skrin dengan lebar 768px atau ke bawah */
-@media screen and (max-width: 768px) {
-
-    /* Navigation Menu */
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
     nav {
-        flex-direction: column; /* Ubah susunan menu dari mendatar ke menegak */
-        padding: 0;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
         padding: 10px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah antara link */
+        font-size: 16px;
     }
 
-    /* Header */
-    .header {
-        margin-top: 50px; /* Kurangkan margin atas untuk memberi lebih ruang */
-        padding: 60px 10px 20px;
-    }
-    
     .header h1 {
-        font-size: 2em; /* Kecilkan saiz tajuk utama */
+        font-size: 2em;
     }
 
     .header p {
-        font-size: 1em; /* Kecilkan saiz perenggan */
+        font-size: 1em;
     }
+}
 
-    /* Header Images */
-    .header-images {
-        flex-direction: column; /* Susun gambar-gambar secara menegak */
-        align-items: center;
-    }
-
-    .header-images img {
-        height: auto; /* Biar ketinggian disesuaikan */
-        width: 80%; /* Jadikan lebar gambar 80% dari skrin */
-        transform: none !important; /* Batalkan efek "tilt" */
-    }
-
-    .header-images img.big {
-        height: auto;
-    }
-
-    /* Container */
+@media (max-width: 768px) {
     .container {
-        width: 90%; /* Lebar penuh, tapi ada padding */
-        margin: 20px auto; /* Kurangkan margin antara container */
+        width: 95%;
         padding: 15px;
     }
 
-    /* Jadual (Table) */
-    table, #resultTable {
-        font-size: 12px;
-        display: block; /* Tukar paparan jadi blok */
-        width: 100%;
-        overflow-x: auto; /* Membolehkan jadual discroll mendatar */
+    /* Kekalkan gambar header sebelah-sebelah */
+    .header-images {
+        display: flex;
+        flex-wrap: nowrap; /* jangan stack */
+        justify-content: center;
+        gap: 10px;
+        overflow-x: auto; /* boleh scroll kalau tak muat */
     }
 
-    /* Form */
-    .button-group {
-        flex-direction: column; /* Butang akan tersusun menegak */
-    }
-
-    /* About Section Image */
-    #edcSection img {
-        width: 100%; /* Gambar ambil lebar penuh */
+    .header-images img {
         height: auto;
+        max-width: 120px; /* kecilkan sikit untuk phone */
+        flex-shrink: 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    textarea,
+    input[type="number"],
+    select {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
     }
 }
