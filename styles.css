@@ -1,0 +1,237 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F4F9F4; /* soft mint */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #3498DB; /* vibrant blue */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #2980B9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #1ABC9C; /* teal hover */
+    color: white;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #3498DB, #1ABC9C); /* blue to teal */
+    color: white;
+    text-align: center;
+    padding: 80px 20px 40px;
+    margin-top: 60px;
+}
+
+.image {
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Container Cards */
+.container {
+    width: 85%;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #1ABC9C;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+textarea, input[type="number"], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #E8F8F5; /* light teal */
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: #1ABC9C; /* teal */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(26, 188, 156, 0.3);
+}
+
+.btn.secondary {
+    background-color: #3498DB; /* blue secondary */
+    color: white;
+    box-shadow: none;
+}
+
+.btn:hover {
+    background-color: #16A085; /* darker teal */
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #1ABC9C;
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    background-color: #F4F9F4;
+    color: #444;
+}
+
+td a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #3498DB;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 5px solid #2980B9;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer i {
+    color: #FFD700;
+    margin-left: 5px;
+}
+
+/* Header Images */
+.header-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.header-images img {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.header-images img.big {
+    height: 300px;
+    z-index: 2;
+}
+
+.header-images img.tilt-left {
+    transform: rotate(-5deg);
+}
+
+.header-images img.tilt-right {
+    transform: rotate(5deg);
+}
+
+.header-images img:hover {
+    transform: scale(1.05);
+}
+
+#aboutSection p {
+    text-align: justify;
+}
+
+label[for="ingredients"] {
+    font-weight: bold;
+    color: #1ABC9C; /* highlight teal */
+}
+
+#ingredients {
+    border: 2px solid #1ABC9C; /* tebal + warna teal */
+    padding: 8px;
+}

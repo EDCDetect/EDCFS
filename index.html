@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDC Free Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#header">Ingredient Checker</a>
+        <a href="#aboutSection">About Us</a>
+        <a href="#edcSection">About EDCs</a>
+        <a href="#resultSection">Results</a>
+    </nav>
+
+    <!-- Main Content -->
+    <header class="header" id="header">
+    <div class="header-images">
+        <img src="img/product2.jpg" alt="product2" class="tilt-left">
+        <img src="img/baby1.jpg" alt="baby1" class="big">
+        <img src="img/product1.jpg" alt="product1" class="tilt-right">
+    </div>
+    <h1>EDC Detect</h1>
+    <p>Your guide to safer consumer products</p>
+</header>
+
+    <button onclick="toggleGuideline()" style="margin-bottom:10px;">❔ How to Use This Website</button>
+
+    <div id="guideline" style="display:none; background-color:#eef; padding:10px; border-radius:5px;">
+      <h4>How to Use:</h4>
+      <ul>
+        <li>Enter the product ingredient in the search box.</li>
+        <li>Click the 'check' icon.</li>
+        <li>Review highlighted ingredients in the table.</li>
+        <li>Check safety notes under each chemical.</li>
+      </ul>
+    </div>
+    
+    <script>
+      function toggleGuideline() {
+        var x = document.getElementById("guideline");
+        x.style.display = (x.style.display === "none") ? "block" : "none";
+      }
+    </script> 
+
+    <div class="container">
+        <form id="edcForm">
+            <div class="form-group">
+                <label for="ingredients">Check Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" class="btn" onclick="checkIngredients()">Check</button>
+                <button type="reset" class="btn secondary">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" id="resultSection">
+        <h2>RESULT</h2>
+        <table id="resultTable" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Max. Safe Concentration</th>
+                    <th>Description</th>
+                    <th>Safety Note</th>
+                    <th>Reference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+        <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
+            <strong>Notes:</strong>
+            <ul style="margin-top: 5px; padding-left: 20px;">
+              <li><strong>Solo</strong>: Chemical used alone (not mixed with similar compounds).</li>
+              <li><strong>In mixture</strong>: Maximum combined concentration when used with other similar chemicals (e.g., parabens).</li>
+              <li><strong>CMR</strong>: Carcinogenic, Mutagenic, or Reprotoxic — banned in EU cosmetics unless exempted.</li>
+              <li><strong>EU</strong>: European Union — sets safety standards for cosmetics and chemicals.</li>
+            </ul>
+          </div> 
+    </div>     
+
+    <!-- About Us Section -->
+    <div class="container" id="aboutSection">
+        <h2>About Us</h2>
+        <p>
+          EDC Detect is committed to helping you make safer choices for consumer products. We offer a comprehensive, scientifically validated database of ingredients known or suspected to pose health risks due to their endocrine-disrupting properties, serving as a crucial resource for researchers, regulators, and consumers alike. Our tool checks if products contain harmful chemicals like parabens or phthalates and promotes healthier alternatives. We believe in transparency and empowering individuals with knowledge for safer living.
+        </p>
+    </div>
+
+    <!-- About Endocrine-Disrupting Chemicals Section -->
+    <div class="container" id="edcSection">
+        <h2>About Endocrine-Disrupting Chemicals (EDCs)</h2>
+        <img src="img/endocrinee.png" alt="endocrinee">
+        <p>
+            Endocrine-disrupting chemicals (EDCs) are substances that interfere with the normal functioning of the endocrine system in both humans and animals. 
+            The endocrine system is responsible for regulating hormones that control many critical functions, including growth, metabolism, reproduction, and 
+            development. EDCs can mimic, block, or interfere with the body's natural hormones, leading to adverse health effects.
+        </p>
+        <p>
+            Exposure to EDCs can occur through various sources such as personal care products, plastics, pesticides, and industrial chemicals. 
+            Some common EDCs found in personal care products include:
+        </p>
+        <ul>
+            <li><strong>Parabens:</strong> Used as preservatives in cosmetics and skincare products.</li>
+            <li><strong>Phthalates:</strong> Used as plasticizers and found in fragrances, nail polish, and hairsprays.</li>
+            <li><strong>Triclosan:</strong> An antimicrobial agent used in soaps, toothpaste, and deodorants.</li>
+            <li><strong>Bisphenol A (BPA):</strong> Found in plastics and used in the manufacturing of packaging and containers.</li>
+            <li><strong>UV Filters:</strong> Chemicals like oxybenzone and octinoxate used in sunscreens.</li>
+        </ul>
+        <p>
+            Continuous exposure to these chemicals, even in small amounts, may contribute to long-term health issues such as reproductive disorders, 
+            developmental abnormalities, and an increased risk of cancers. Reducing exposure to EDCs by using safer, non-toxic alternatives is a 
+            proactive step towards protecting your health.
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2024 EDC Free Solutions. All rights reserved. Made with dedication.<i class="fas fa-heart"></i></p>
+    </footer>
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Function to smoothly scroll to a section when the link is clicked
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
